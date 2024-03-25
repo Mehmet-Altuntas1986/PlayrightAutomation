@@ -22,3 +22,4 @@ test('frames', async ({ page }) => {
   await page.waitForTimeout(5000);
  
 });
+//npx playwright test tests/HandleFrames-spec.js --project chromium --headed
