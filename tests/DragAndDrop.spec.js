@@ -8,10 +8,10 @@ test ('Drag And Drop', async ({page})=>{
    const italy=await page.locator('#box106')
 
    //Appraoch 1
-   /*await rome.hover()
+   /*await rome.hover()        //source element
    await page.mouse.down()
 
-   await italy.hover()
+   await italy.hover()        //target element
    await page.mouse.up()
 */
     //Appraoch 2
@@ -21,7 +21,7 @@ test ('Drag And Drop', async ({page})=>{
     const washington=await page.locator('#box3')
     const usa=await page.locator('#box103')
     
-    await washington.dragTo(usa)
+    await washington.dragTo(usa)        //washington elementini usa ellemntine surukleyince orda birakiyor onu
 
 
    await page.waitForTimeout(5000)
