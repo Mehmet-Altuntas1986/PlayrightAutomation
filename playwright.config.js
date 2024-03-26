@@ -29,6 +29,8 @@ module.exports = defineConfig({
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
+    screenshot: 'on',     
+    //screenshot: 'on', screenshot2 class inda ekledik , herbir test sonrasi bu otomatik ekran gorunutusu alir
   },
 
   /* Configure projects for major browsers */
