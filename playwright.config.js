@@ -28,7 +28,9 @@ module.exports = defineConfig({
     // baseURL: 'http://127.0.0.1:3000',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'on-first-retry',
+    trace: 'retain-on-failure',
+    screenshot: 'only-on-failure',    //screenshot: 'on',  ekle screenshot: 'of', screenshot: 'only-on-failure',   
+    video:"retain-on-failure",
   },
 
   /* Configure projects for major browsers */
@@ -77,3 +79,22 @@ module.exports = defineConfig({
   // },
 });
 
+
+
+
+/* use: { }. blogunda video record icin aasagidakilerden birini kullan
+Playwright Test can record videos for your tests, controlled by the video option in your Playwright config. By default videos are off.
+
+'off' - Do not record video.
+'on' - Record video for each test.
+'retain-on-failure' - Record video for each test, but remove all videos from successful test runs.
+'on-first-retry' - Record video only when retrying a test for the first time.
+Video files will appear in the test output directory, typically test-results.
+
+*/
+
+/* use: { }. blogunda screenshot 
+screenshot: 'on',  her testin ekran goruntusunu alir
+screenshot: 'of',
+screenshot: 'only-on-failure', sadece fail olan testlerin ekran goruntusunu alir
+*/
