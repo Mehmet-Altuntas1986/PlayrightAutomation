@@ -32,7 +32,7 @@ module.exports = defineConfig({
     screenshot: 'only-on-failure',    //screenshot: 'on',  ekle screenshot: 'of', screenshot: 'only-on-failure',   
     video:"retain-on-failure",
   },
-
+ //timeout:20000,      //default degeri 30000 saniye herbir test icin bekleme suresi
   /* Configure projects for major browsers */
   projects: [
     {
