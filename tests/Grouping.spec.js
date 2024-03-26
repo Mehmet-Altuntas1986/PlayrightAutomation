@@ -18,7 +18,7 @@ test.afterEach(async () => {
 
 //describe in yanina only eklersek only bu group test olur , hook lar calisir
 //describe in yanina skip eklersek bu group test olmaz , bir sonraki group a gecer
-//note hooks lari hook1,2,3 class larini inceleyerek yap
+//note hooks lari hook1,2,3 class larini inceleyerek yapt
  test.describe('Group 1',()=>{        
                                       
     
