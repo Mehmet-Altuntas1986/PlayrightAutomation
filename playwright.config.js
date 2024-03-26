@@ -17,11 +17,23 @@ module.exports = defineConfig({
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
   /* Retry on CI only */
-  retries: process.env.CI ? 2 : 0,
+  //retries: process.env.CI ? 2 : 0,
   /* Opt out of parallel tests on CI. */
+  retries:1,
+ 
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: 'html',
+//reporter:'html',
+//reporter:['json', { outputFile: 'results.json' }],
+//reporter:['junit', { outputFile: 'results.xml' }],
+  //we added multiple reporters
+  reporter: [
+    ['list'],
+    ['html'],
+    ['junit', { outputFile: 'results.xml' }],
+    ['json', { outputFile: 'results.json' }],
+    ['allure-playwright',{outputFolder: 'my-allure-results'}]
+  ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
@@ -32,7 +44,7 @@ module.exports = defineConfig({
     screenshot: 'only-on-failure',    //screenshot: 'on',  ekle screenshot: 'of', screenshot: 'only-on-failure',   
     video:"retain-on-failure",
   },
-
+ //timeout:20000,      //default degeri 30000 saniye herbir test icin bekleme suresi
   /* Configure projects for major browsers */
   projects: [
     {
