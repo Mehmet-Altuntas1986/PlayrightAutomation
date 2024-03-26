@@ -23,4 +23,5 @@ test('Keyboard actions', async ({ page }) => {
 
 });
 
+//  https://playwright.dev/docs/input      actions larda keys and shortcuts 
 
